@@ -4,7 +4,7 @@ class Node:
         self.data = data
         self.next = None
 
-
+    # Prints all nodes after this one in the linked list
     def print(self):
         arr = []
         curr = self
@@ -20,7 +20,8 @@ class DoubleNode:
         self.prev = None
         self.next = None
 
-
+    # Prints all of the nodes in the linked list
+    # that this node is in starting from the beginning
     def print(self):
         arr = []
         curr = self
