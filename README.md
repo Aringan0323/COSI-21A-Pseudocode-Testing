@@ -38,7 +38,6 @@ to initialize a new DoubleNode with data.
 to other nodes.
 * **prev**: Only works for Linked Lists containing DoubleNode nodes. Use <code>LinkedListNode.prev</code> to return the node that is before the referenced
 node in a Linked List of DoubleNode nodes. Can be used to reassign prev pointers to other nodes.
-* **print for Linked Lists of Node nodes**: Use <code>LinkedListNode.print()</code> to print a list containing the data of every node after the referenced node in
-the Linked List.
-* **print for Linked Lists of DoubleNode nodes**: Use <code>LinkedListNode.print()</code> to print a list containing the data of every node in the Linked List containing
-the referenced node, even if the referenced node is not the first node in the Linked List.
+* **print for Linked Lists of Node nodes**: Use <code>LinkedListNode.print(line_number)</code> to print a list containing the data of every node after the referenced node in
+the Linked List. This function will also print out the line number of your choosing.
+* **print for Linked Lists of DoubleNode nodes**: Use <code>LinkedListNode.print(line_number)</code> to print a list containing the data of every node in the Linked List containing the referenced node, even if the referenced node is not the first node in the Linked List. This function will also print out the line number of your choosing.
