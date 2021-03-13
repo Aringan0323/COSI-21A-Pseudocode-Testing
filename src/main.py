@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+
 from Queue import Queue, dequeue, enqueue
 from Stack import Stack, push, pop, top
 from QueueStackMethods import isEmpty, size
@@ -18,7 +21,4 @@ and queues such as isEmpty and size
 '''
 
 
-
-def main():
-
-    #Insert pseudocode here
+#insert pseudocode here

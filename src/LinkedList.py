@@ -5,13 +5,13 @@ class Node:
         self.next = None
 
     # Prints all nodes after this one in the linked list
-    def print(self):
+    def print(self, line_num):
         arr = []
         curr = self
         while curr != None:
             arr.append(curr.data)
             curr = curr.next
-        print(arr)
+        print("Line {}: {}".format(line_num, arr))
 
 class DoubleNode:
 
