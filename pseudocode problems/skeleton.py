@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-
+import sys
+sys.path.insert(1,"../src/")
 
 from Queue import Queue, dequeue, enqueue
 from Stack import Stack, push, pop, top
