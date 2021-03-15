@@ -3,7 +3,7 @@ import sys
 sys.path.insert(0, '../src/')
 from LinkedList import Node, DoubleNode
 
-def compress(L, n):
+def compress_solution(L, n):
     if L == None:
         return None
     curr = L
@@ -49,28 +49,40 @@ def overflow_case():
         curr = curr.next
     return L, 15
 
-def testing_example():
+def LL_test(cb):
 
     L1, n1 = even_case()
     L2, n2 = odd_case()
     L3, n3 = empty_case()
     L4, n4 = overflow_case()
 
-    L1.print('Before compression')
-    L2.print('Before compression')
-    print(L3)
-    L4.print('Before compression')
+    L1.print('L1 Before compression')
+    cb(L1,n1)
+    L1.print('L1 After compression')
+    print('\n\n')
+
+    L2.print('L2 Before compression')
+    cb(L2,n2)
+    L2.print('L2 After compression')
     print("\n\n")
 
-    compress(L1,n1)
-    compress(L2,n2)
-    compress(L3,n3)
-    compress(L4,n4)
+    print('L3 Before compression\n{}'.format(L3))
+    cb(L3,n3)
+    print('L3 After compression\n{}'.format(L3))
+    print("\n\n")
 
-    L1.print('After compression')
-    L2.print('After compression')
-    print(L3)
-    L4.print('After compression')
+    L4.print('L4 Before compression')
+    cb(L4,n4)
+    L4.print('L4 After compression')
 
 
-testing_example()
+def compress(L, n):
+
+    #Insert code here
+
+    return
+
+
+
+
+LL_test(compress)
