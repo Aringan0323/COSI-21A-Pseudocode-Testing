@@ -13,6 +13,15 @@ class Node:
             curr = curr.next
         print("Line {}: {}".format(line_num, arr))
 
+    def size(self):
+        L = self
+        curr = L
+        count = 0
+        while curr != None:
+            curr = curr.next
+            count += 1
+        return count
+
 class DoubleNode:
 
     def __init__(self, data=None):
