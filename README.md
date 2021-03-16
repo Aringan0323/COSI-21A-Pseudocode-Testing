@@ -1,6 +1,12 @@
 # COSI-21A-Pseudocode-Testing
 ### Written in python to test problem set solutions written in pseudocode for stacks, queues, and linked lists
 
+
+## Usage
+
+When testing a new pseudocode problem, make a copy of <code>skeleton.py</code> which is provided in the <code>problems</code>
+folder. This file has all of the necessary imports that you will need to get started with testing a pseudocode quesiton, but you may remove unnecessary imports if you wish. Make sure that the new file you create is in the <code>problems</code> folder, or that the path specified is to the <code>src</code> folder.
+
 ## About Stacks and Queues
 
 - The Stacks and the Queues are implemented with python lists.
