@@ -2,24 +2,41 @@
 import sys
 sys.path.insert(0,"../src/")
 
+#Import necessary modules
 from Queue import Queue, dequeue, enqueue
 from Stack import Stack, push, pop, top
 from QueueStackMethods import isEmpty, size
 from LinkedList import Node, DoubleNode
+from Test import Test
 
-'''
-Note:
-When using stacks and queues, you can use dot
-notation or static method notation to do the same thing.
+# Refer to the README.md file for instructions on how to use this package
 
-Ex:
-Let Q be a Queue
-Q.dequeue() is equivalent to dequeue(Q)
-Q.enqueue(x) is equivalent to enqueue(Q)
+def foo_solution():
 
-This works for all stack methods, and methods shared between stacks
-and queues such as isEmpty and size
-'''
+    # Put the solution to the problem here to compare
+
+    return
+
+def create_test_params():
+
+    # If you want to use the Test class, create a function here
+    # to initialize your test cases and create the params. Return
+    # the params as a tuple.
+
+    return (,)
+
+def foo():
+
+    # Put the pseudocode you are testing here
+
+    return
 
 
-#insert pseudocode here
+# Initialize your test parameters
+test_params = create_test_params()
+
+# Initialize a Test object with your function and test parameters
+foo_test = Test(foo, *test_params)
+
+# Run the test
+foo_test.run()
