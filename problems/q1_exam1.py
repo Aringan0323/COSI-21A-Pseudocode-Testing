@@ -1,8 +1,10 @@
 #!/usr/bin/env python
-from LinkedList import Node, DoubleNode
 import traceback
 import sys
 sys.path.insert(0, '../src/')
+
+from LinkedList import Node, DoubleNode
+from Test import Test
 
 
 def even_case():
@@ -11,7 +13,7 @@ def even_case():
     for i in range(2, 11):
         curr.next = Node(i)
         curr = curr.next
-    return L, 2
+    return (L, 2)
 
 def odd_case():
     L = Node(1)
@@ -19,10 +21,10 @@ def odd_case():
     for i in range(2, 10):
         curr.next = Node(i)
         curr = curr.next
-    return L, 4
+    return (L, 4)
 
 def empty_case():
-    return None,1
+    return (None,1)
 
 def overflow_case():
     L = Node(1)
@@ -30,51 +32,28 @@ def overflow_case():
     for i in range(2, 11):
         curr.next = Node(i)
         curr = curr.next
-    return L, 15
+    return (L, 15)
 
-def LL_test(cb):
+def create_test_params():
+        L1, n1 = even_case()
+        L2, n2 = odd_case()
+        L3, n3 = empty_case()
+        L4, n4 = overflow_case()
 
-    L1, n1 = even_case()
-    L2, n2 = odd_case()
-    L3, n3 = empty_case()
-    L4, n4 = overflow_case()
+        cases_args = [(L1,n1), (L2,n2), (L3,n3), (L4,n4)]
 
-    L1.print('L1 Before compression')
-    try:
-        cb(L1,n1)
-    except:
-        print("ERROR OCCURRED WHEN COMPRESSING L1")
-        print(traceback.format_exc())
-    L1.print('L1 After compression')
-    print('\n\n')
+        input_print = [
+                ("L1 before compression: ", L1),
+                ("L2 before compression: ", L2),
+                ("L3 before compression: ", L3),
+                ("L4 before compression: ", L4)]
 
-    L2.print('L2 Before compression')
-
-    try:
-        cb(L2,n2)
-    except:
-        print("ERROR OCCURRED WHEN COMPRESSING L2")
-        print(traceback.format_exc())
-    L2.print('L2 After compression')
-    print("\n\n")
-
-    print('L3 Before compression\n{}'.format(L3))
-
-    try:
-        cb(L3,n3)
-    except:
-        print("ERROR OCCURRED WHEN COMPRESSING L3")
-        print(traceback.format_exc())
-    print('L3 After compression\n{}'.format(L3))
-    print("\n\n")
-
-    L4.print('L4 Before compression')
-    try:
-        cb(L4,n4)
-    except:
-        print("ERROR OCCURRED WHEN COMPRESSING L4")
-        print(traceback.format_exc())
-    L4.print('L4 After compression')
+        output_print = [
+                ("L1 after compression: ", L1),
+                ("L2 after compression: ", L2),
+                ("L3 after compression: ", L3),
+                ("L4 after compression: ", L4)]
+        return cases_args, input_print, output_print
 
 def compress_solution(L, n):
     if L == None:
@@ -101,8 +80,12 @@ def compress(L, n):
 
     return
 
+cases_args, input_print, output_print = create_test_params()
 
-LL_test(compress)
+LL_test = Test(compress_solution, cases_args, input_print, output_print=output_print)
+
+LL_test.run()
+
 
 #L1 = [1,2,3,4,5,6,7,8,9,10], n1 = 2
 #L1 after compression should be = [3,7,11,15,19]

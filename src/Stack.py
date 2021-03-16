@@ -28,6 +28,9 @@ class Stack:
         print("{} is empty is {}\n".format(self.name, is_empty))
         return is_empty
 
+    def to_string(self):
+        return "{}: {}".format(self.name, self.s)
+
     def print(self, function_name):
         print("After {}, {}: {}\n".format(function_name, self.name, self.s))
 

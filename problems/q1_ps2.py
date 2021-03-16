@@ -4,13 +4,32 @@ sys.path.insert(1,"../src/")
 from Queue import Queue, dequeue, enqueue
 from Stack import Stack, push, pop, top
 from QueueStackMethods import isEmpty, size
-from LinkedList import Node, DoubleNode
+from Test import Test
 
 
-S1 = Stack('S', [1,2,3,4,5])
-S2 = Stack('S', [])
-S3 = Stack('S', [1,4,2,5,7,5,3])
+def create_test_params():
+    S1 = Stack('S', [1,2,3,4,5])
+    S2 = Stack('S', [])
+    S3 = Stack('S', [5,4,3,2,1])
+    S4 = Stack('S', [-1,-2,-3,-4,-5])
 
+    cases_args = [(S1), (S2), (S3), (S4)]
+
+    input_print = [
+            ("S1 before mirror: ", S1),
+            ("S2 before mirror: ", S2),
+            ("S3 before mirror: ", S3),
+            ("S4 before mirror: ", S4)
+    ]
+
+    output_print = [
+            ("S1 after mirror: ", S1),
+            ("S2 after mirror: ", S2),
+            ("S3 after mirror: ", S3),
+            ("S4 after mirror: ", S4)
+    ]
+
+    return cases_args, input_print, output_print
 
 def mirror_solution(S):
     Q = Queue('Q')
@@ -57,13 +76,8 @@ def reverseFill(s1):
     return mirrorFill(s1, s2)
 
 
+cases_args, input_print, output_print = create_test_params
 
+mirror_test = Test(mirror_solution, cases_args, input_print, output_print)
 
-
-
-
-
-
-
-
-print(reverseFill(S1).s)
+mirror_test.run()

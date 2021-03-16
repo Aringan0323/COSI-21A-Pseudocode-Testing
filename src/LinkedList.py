@@ -4,15 +4,24 @@ class Node:
         self.data = data
         self.next = None
 
-    # Prints all nodes after this one in the linked list
-    def print(self, line_num):
+
+    # Returns all nodes after this one in the linked list as a string
+    def to_string(self):
         arr = []
         curr = self
         while curr != None:
             arr.append(curr.data)
             curr = curr.next
-        print("Line {}: {}".format(line_num, arr))
+        return "{}".format(arr)
 
+
+    # Prints all nodes after this one in the linked list, and the line number
+    def print(self, line_num):
+        print("Line {}".format(line_num) + ": " + self.to_string())
+
+    # Returns the size of the linked list beginning at this node.
+    # Note: This is not a traditional linked list operation, but that
+    # doesn't stop students from trying to use it!
     def size(self):
         L = self
         curr = L
@@ -29,9 +38,9 @@ class DoubleNode:
         self.prev = None
         self.next = None
 
-    # Prints all of the nodes in the linked list
-    # that this node is in starting from the beginning
-    def print(self, line_num):
+    # Returns all of the nodes in the linked list
+    # that this node is in starting from the beginning as a string
+    def to_string(self):
         arr = []
         curr = self
         while curr.prev != None:
@@ -39,4 +48,24 @@ class DoubleNode:
         while curr != None:
             arr.append(curr.data)
             curr = curr.next
-        print("Line {}: {}".format(line_num, arr))
+        return "{}".format(arr)
+
+
+    # Prints all of the nodes in the linked list
+    # that this node is in starting from the beginning as a string,
+    # and the line number
+    def print(self, line_num):
+        print("Line {}".format(line_num) + ": " + self.to_string())
+
+    # Returns the size of the linked list that this node is contained in.
+    # Note: This is not a traditional linked list operation, but that
+    # doesn't stop students from trying to use it!
+    def size(self):
+        arr = []
+        curr = self
+        while curr.prev != None:
+            curr = curr.prev
+        while curr != None:
+            arr.append(curr.data)
+            curr = curr.next
+        return len(arr)
